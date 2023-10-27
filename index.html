@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day number JS project</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0076B4, #00C6D6);
+        }
+
+        .select-div {
+            width: 500px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        h1 {
+            padding-bottom: 20px;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .select {
+            font-size: 30px;
+            width: 200px;
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        p {
+            padding-top: 40px;
+            font-size: 35px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="body">
+        <div class="select-div">
+            <h1>Days of the Week</h1>
+            <select name="days" id="options" class="select">
+                <option value="day0">Select a day</option>
+                <option value="day1">1</option>
+                <option value="day2">2</option>
+                <option value="day3">3</option>
+                <option value="day4">4</option>
+                <option value="day5">5</option>
+                <option value="day6">6</option>
+                <option value="day7">7</option>
+            </select>
+            <p></p>
+        </div>
+    </div>
+
+
+    <script>
+        const daySelect = document.getElementById("options");
+        const paragraph = document.querySelector("p");
+
+        daySelect.addEventListener("change", function () {
+            let selectedValue = this.value;
+
+            if (selectedValue === "day0") {
+                paragraph.textContent = 'Select a valid day';
+            } else if (selectedValue === "day1") {
+                paragraph.textContent = 'Your selected day is Monday';
+            } else if (selectedValue === "day2") {
+                paragraph.textContent = 'Your selected day is Tuesday';
+            } else if (selectedValue === "day3") {
+                paragraph.textContent = 'Your selected day is Wednesday';
+            } else if (selectedValue === "day4") {
+                paragraph.textContent = 'Your selected day is Thurday';
+            } else if (selectedValue === "day5") {
+                paragraph.textContent = 'Your selected day is Friday';
+            } else if (selectedValue === "day6") {
+                paragraph.textContent = 'Your selected day is Saturday';
+            } else if (selectedValue === "day7") {
+                paragraph.textContent = 'Your selected day is Sunday';
+            } else {
+                paragraph.textContent = 'Select a valid day number'
+            }
+        });
+    </script>
+</body>
+
+</html>
